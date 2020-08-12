@@ -1,13 +1,11 @@
 package com.ascend5050.paxposlink.services
 
 import com.pax.poslink.*
-import com.pax.poslink.CommSetting.AIDL
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 object CCService {
-
 
     private const val TRAN_TYPE_MANAGE_INIT = "INIT"
     private const val TRAN_TYPE_PAYMENT_SALE = "SALE"
@@ -20,7 +18,6 @@ object CCService {
     private const val EDC_TYPE_CREADIT = "CREDIT"
     private const val TENDER_TYPE_PAYMENT = "CREDIT"
 
-
     private const val COM_SETTING_HOST = "UNKNOWN"
     private const val COM_SETTING_SERIAL_PORT = "COM1"
     private const val COM_SETTING_TYPE = "TCP"
@@ -30,18 +27,25 @@ object CCService {
 
     private val defaultCommSetting: CommSetting
         get() {
-            val comSetting = CommSetting()
+            val commSetting = CommSetting()
 
             //TODO: find out is this is necessary for AIDL communication type
-                comSetting.timeOut = COM_SETTING_TIME_OUT
-                comSetting.type = COM_SETTING_TYPE
-                comSetting.serialPort = COM_SETTING_SERIAL_PORT
-                comSetting.baudRate = COM_SETTING_BAUD_RATE
-                comSetting.destPort = COM_SETTING_DEST_PORT
+//            commSetting.timeOut = COM_SETTING_TIME_OUT
+//                comSetting.type = COM_SETTING_TYPE
+//                comSetting.serialPort = COM_SETTING_SERIAL_PORT
+//                comSetting.baudRate = COM_SETTING_BAUD_RATE
+//                comSetting.destPort = COM_SETTING_DEST_PORT
 
-            comSetting.type = AIDL
-            comSetting.isEnableProxy = true
-            return comSetting
+            commSetting.type = CommSetting.TCP
+            commSetting.setTimeOut("60000")
+            commSetting.setSerialPort("COM1")
+            commSetting.setBaudRate("9600")
+            commSetting.setDestIP("172.16.20.15")
+            commSetting.setDestPort("10009")
+            commSetting.setMacAddr("")
+            commSetting.setEnableProxy(false)
+//            comSetting.isEnableProxy = true
+            return commSetting
         }
 
     private fun send(device: CCDevice, request: Any, message: String = "Contacting payment device ..."): Observable<CCStatus> {
