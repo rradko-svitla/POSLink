@@ -121,42 +121,42 @@ object CCService {
         return send(paymentRequest, context)
     }
 
-//    /**
-//     * Send VOID command to PAX.
-//     */
-//    fun void(device: CCDevice, origRefNum: String): Observable<CCStatus> {
-//        val paymentRequest = PaymentRequest()
-//        paymentRequest.TenderType = paymentRequest.ParseTenderType(TENDER_TYPE_PAYMENT)
-//        paymentRequest.TransType = paymentRequest.ParseTransType(TRAN_TYPE_PAYMENT_VOID)
-//        paymentRequest.ECRRefNum = "1"
-//        paymentRequest.OrigRefNum = origRefNum
-//        return send(device, paymentRequest)
-//    }
-//
-//    /**
-//     * Send ADJUST command to PAX.
-//     */
-//    fun adjust(device: CCDevice, tipAmount: Double, origRefNum: String): Observable<CCStatus> {
-//        val paymentRequest = PaymentRequest()
-//        paymentRequest.TenderType = paymentRequest.ParseTenderType(TENDER_TYPE_PAYMENT)
-//        paymentRequest.TransType = paymentRequest.ParseTransType(TRAN_TYPE_PAYMENT_ADJUST)
-//        paymentRequest.ECRRefNum = "1"
-//        paymentRequest.Amount = (tipAmount * 100).toInt().toString()
-//        paymentRequest.OrigRefNum = origRefNum
-//        return send(device, paymentRequest)
-//    }
-//
-//    /**
-//     * Send RETURN command to PAX.
-//     */
-//    fun refund(device: CCDevice, amount: Double): Observable<CCStatus> {
-//        val paymentRequest = PaymentRequest()
-//        paymentRequest.TenderType = paymentRequest.ParseTenderType(TENDER_TYPE_PAYMENT)
-//        paymentRequest.TransType = paymentRequest.ParseTransType(TRAN_TYPE_PAYMENT_REFUND)
-//        paymentRequest.ECRRefNum = "1"
-//        paymentRequest.Amount = (amount * 100).toInt().toString()
-//        return send(device, paymentRequest)
-//    }
+    /**
+     * Send VOID command to PAX.
+     */
+    fun void(context: Context, origRefNum: String): Observable<CCStatus> {
+        val paymentRequest = PaymentRequest()
+        paymentRequest.TenderType = paymentRequest.ParseTenderType(TENDER_TYPE_PAYMENT)
+        paymentRequest.TransType = paymentRequest.ParseTransType(TRAN_TYPE_PAYMENT_VOID)
+        paymentRequest.ECRRefNum = "1"
+        paymentRequest.OrigRefNum = origRefNum
+        return send(paymentRequest, context)
+    }
+
+    /**
+     * Send ADJUST command to PAX.
+     */
+    fun adjust(context: Context, tipAmount: Double, origRefNum: String): Observable<CCStatus> {
+        val paymentRequest = PaymentRequest()
+        paymentRequest.TenderType = paymentRequest.ParseTenderType(TENDER_TYPE_PAYMENT)
+        paymentRequest.TransType = paymentRequest.ParseTransType(TRAN_TYPE_PAYMENT_ADJUST)
+        paymentRequest.ECRRefNum = "1"
+        paymentRequest.Amount = (tipAmount * 100).toInt().toString()
+        paymentRequest.OrigRefNum = origRefNum
+        return send(paymentRequest, context)
+    }
+
+    /**
+     * Send RETURN command to PAX.
+     */
+    fun refund(context: Context, amount: Double): Observable<CCStatus> {
+        val paymentRequest = PaymentRequest()
+        paymentRequest.TenderType = paymentRequest.ParseTenderType(TENDER_TYPE_PAYMENT)
+        paymentRequest.TransType = paymentRequest.ParseTransType(TRAN_TYPE_PAYMENT_REFUND)
+        paymentRequest.ECRRefNum = "1"
+        paymentRequest.Amount = (amount * 100).toInt().toString()
+        return send(paymentRequest, context)
+    }
 //
 //    /**
 //     * Send FORCEAUTH command to PAX.

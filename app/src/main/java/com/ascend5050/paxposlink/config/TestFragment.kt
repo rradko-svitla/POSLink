@@ -5,16 +5,16 @@ import com.ascend5050.paxposlink.BaseFragment
 import com.ascend5050.paxposlink.IBaseView
 import com.ascend5050.paxposlink.R
 import com.jakewharton.rxbinding2.view.RxView
-import kotlinx.android.synthetic.main.fragment_configuration.*
+import kotlinx.android.synthetic.main.fragment_test.*
 
-class ConfigFragment : BaseFragment<ConfigPresenter, IBaseView>(), IBaseView {
+class TestFragment : BaseFragment<ConfigPresenter, IBaseView>(), IBaseView {
 
     override fun initPresenter(): ConfigPresenter {
         return ConfigPresenter(this)
     }
 
     override fun getLayoutResourceId(): Int {
-        return R.layout.fragment_configuration
+        return R.layout.fragment_test
     }
 
     @SuppressLint("CheckResult")
