@@ -1,6 +1,7 @@
 package com.ascend5050.paxposlink
 
 import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -38,6 +39,10 @@ abstract class BaseFragment<P, V> : Fragment(),
     abstract fun initPresenter(): P
 
     abstract fun setupViews()
+
+    override fun getViewContext(): Context {
+        return requireContext()
+    }
 
     override fun showLoading(message: String) {
         val builder = AlertDialog.Builder(context)

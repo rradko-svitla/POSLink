@@ -1,5 +1,6 @@
 package com.ascend5050.paxposlink
 
+import android.content.Context
 import com.ascend5050.paxposlink.services.CCResult
 
 /**
@@ -11,4 +12,5 @@ interface IBaseView {
     fun onSuccess(result: CCResult)
     fun onProgress(message: String)
     fun onError(message: String?)
+    fun getViewContext() : Context
 }

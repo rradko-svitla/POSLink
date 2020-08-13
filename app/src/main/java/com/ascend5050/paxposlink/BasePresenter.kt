@@ -1,6 +1,6 @@
 package com.ascend5050.paxposlink
 
-import com.ascend5050.paxposlink.services.CCDevice
+import android.content.Context
 import com.ascend5050.paxposlink.services.CCStatus
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -13,7 +13,7 @@ abstract class BasePresenter<V>(protected var view: V) where V : IBaseView {
     /**
      * Entry point for requesting process.
      */
-    val request = PublishSubject.create<CCDevice>()
+    val request = PublishSubject.create<Context>()
 
     /**
      * The loading message to be shown to end user.
@@ -40,7 +40,7 @@ abstract class BasePresenter<V>(protected var view: V) where V : IBaseView {
     /**
      * Child class to provide the necessary method call.
      */
-    protected open fun doRequest(device: CCDevice): Observable<CCStatus> {
+    protected open fun doRequest(context: Context): Observable<CCStatus> {
         throw NotImplementedError()
     }
 }
