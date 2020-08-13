@@ -157,27 +157,27 @@ object CCService {
         paymentRequest.Amount = (amount * 100).toInt().toString()
         return send(paymentRequest, context)
     }
-//
-//    /**
-//     * Send FORCEAUTH command to PAX.
-//     */
-//    fun force(device: CCDevice, amount: Double, authCode: String): Observable<CCStatus> {
-//        val paymentRequest = PaymentRequest()
-//        paymentRequest.TenderType = paymentRequest.ParseTenderType(TENDER_TYPE_PAYMENT)
-//        paymentRequest.TransType = paymentRequest.ParseTransType(TRAN_TYPE_PAYMENT_FORCEAUTH)
-//        paymentRequest.ECRRefNum = "1"
-//        paymentRequest.Amount = (amount * 100).toInt().toString()
-//        paymentRequest.AuthCode = authCode
-//        return send(device, paymentRequest)
-//    }
-//
-//    /**
-//     * Send CLOSEBATCH command to PAX.
-//     */
-//    fun closeBatch(device: CCDevice): Observable<CCStatus> {
-//        val batchRequest = BatchRequest()
-//        batchRequest.TransType = batchRequest.ParseTransType(TRAN_TYPE_BATCH_CLOSE)
-//        batchRequest.EDCType = batchRequest.ParseEDCType(EDC_TYPE_CREADIT)
-//        return send(device, batchRequest)
-//    }
+
+    /**
+     * Send FORCEAUTH command to PAX.
+     */
+    fun force(context: Context, amount: Double, authCode: String): Observable<CCStatus> {
+        val paymentRequest = PaymentRequest()
+        paymentRequest.TenderType = paymentRequest.ParseTenderType(TENDER_TYPE_PAYMENT)
+        paymentRequest.TransType = paymentRequest.ParseTransType(TRAN_TYPE_PAYMENT_FORCEAUTH)
+        paymentRequest.ECRRefNum = "1"
+        paymentRequest.Amount = (amount * 100).toInt().toString()
+        paymentRequest.AuthCode = authCode
+        return send(paymentRequest, context)
+    }
+
+    /**
+     * Send CLOSEBATCH command to PAX.
+     */
+    fun closeBatch(context: Context): Observable<CCStatus> {
+        val batchRequest = BatchRequest()
+        batchRequest.TransType = batchRequest.ParseTransType(TRAN_TYPE_BATCH_CLOSE)
+        batchRequest.EDCType = batchRequest.ParseEDCType(EDC_TYPE_CREADIT)
+        return send(batchRequest, context)
+    }
 }

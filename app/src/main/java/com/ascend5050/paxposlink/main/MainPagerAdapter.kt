@@ -4,7 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.ascend5050.paxposlink.adjust.AdjustFragment
-import com.ascend5050.paxposlink.config.TestFragment
+import com.ascend5050.paxposlink.batch.CloseBatchFragment
+import com.ascend5050.paxposlink.force.ForceFragment
+import com.ascend5050.paxposlink.test.TestFragment
 import com.ascend5050.paxposlink.refund.RefundFragment
 import com.ascend5050.paxposlink.sale.SaleFragment
 import com.ascend5050.paxposlink.voidt.VoidFragment
@@ -17,7 +19,9 @@ class MainPagerAdapter(fm: FragmentManager?) :
         Pair("Sale", SaleFragment()),
         Pair("Void", VoidFragment()),
         Pair("Adjust", AdjustFragment()),
-        Pair("Refund", RefundFragment())
+        Pair("Refund", RefundFragment()),
+        Pair("Force", ForceFragment()),
+        Pair("Close Batch", CloseBatchFragment())
     )
 
     override fun getItem(position: Int): Fragment {
