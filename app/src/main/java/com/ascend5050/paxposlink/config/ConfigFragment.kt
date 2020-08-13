@@ -1,11 +1,11 @@
 package com.ascend5050.paxposlink.config
 
+import android.annotation.SuppressLint
 import com.ascend5050.paxposlink.BaseFragment
 import com.ascend5050.paxposlink.IBaseView
 import com.ascend5050.paxposlink.R
-import io.reactivex.Observable
+import com.jakewharton.rxbinding2.view.RxView
 import kotlinx.android.synthetic.main.fragment_configuration.*
-
 
 class ConfigFragment : BaseFragment<ConfigPresenter, IBaseView>(), IBaseView {
 
@@ -17,12 +17,12 @@ class ConfigFragment : BaseFragment<ConfigPresenter, IBaseView>(), IBaseView {
         return R.layout.fragment_configuration
     }
 
+    @SuppressLint("CheckResult")
     override fun setupViews() {
-        testConnectionButton.setOnClickListener {
-            initPresenter()
-            val observable = Observable.fromCallable {requireContext()}
-            observable.subscribe(presenter.request)
-        }
+        RxView.clicks(testConnectionButton)
+            .subscribe {
+                presenter.request.onNext(requireContext())
+            }
     }
 
 }
