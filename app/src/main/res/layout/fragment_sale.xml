@@ -20,4 +20,16 @@
         android:layout_gravity="center"
         android:layout_margin="@dimen/margin_default"
         android:text="@string/sale" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/responseContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+    </ScrollView>
 </LinearLayout>

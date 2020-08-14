@@ -17,4 +17,73 @@
     <string name="adjust">Adjust</string>
     <string name="force">Force</string>
     <string name="close_batch">Close Batch</string>
+
+<!--    Payment Response-->
+    <string name="payment_response">Response</string>
+    <string name="payment_response_authCode">Auth Code</string>
+    <string name="payment_response_approvedAmt">Approved Amt</string>
+    <string name="payment_response_avsResponse">Avs Response</string>
+    <string name="payment_response_bogusAccountNum">Bogus Account Num</string>
+    <string name="payment_response_cardType">Card Type</string>
+    <string name="payment_response_cvResponse">Cv Response</string>
+    <string name="payment_response_hostCode">Host Code</string>
+    <string name="payment_response_hostResponse">Host Response</string>
+    <string name="payment_response_message">Message</string>
+    <string name="payment_response_refNum">Ref Num</string>
+    <!-- <string name="payment_response_rawresponse">RawResponse*</string> -->
+    <string name="payment_response_remainingBalance">Remaining Balance</string>
+    <string name="payment_response_extraBalance">Extra Balance</string>
+    <string name="payment_response_requestedAmt">Requested Amt</string>
+    <string name="payment_response_resultCode">Result Code</string>
+    <string name="payment_response_resultTxt">Result Txt</string>
+    <string name="payment_response_timestamp">Timestamp</string>
+    <string name="payment_response_sigfilename">Sig File Name</string>
+    <string name="payment_response_sigdata">Sig Data</string>
+    <string name="payment_response_extData">Ext Data</string>
+    <string name="payment_response_vasCode">VASCode</string>
+    <string name="payment_response_vasData">VASData</string>
+    <string name="payment_response_NDEFData">NDEFData</string>
+    <string name="payment_response_receipt">Show Receipt</string>
+    <string name="payment_response_tic">TranIntgClass</string>
+
+    <string name="tor_info_response_record_type">Record Type</string>
+    <string name="tor_info_response_reversal_time_stamp">Reversal Time Stamp</string>
+    <string name="tor_info_response_host_response_code">Host Response Code</string>
+    <string name="tor_info_response_host_response_message">Host Response Message</string>
+    <string name="tor_info_response_host_reference_number">Host Reference Number</string>
+    <string name="tor_info_response_gateway_transaction_id">Gateway Transaction ID</string>
+    <string name="tor_info_response_orig_amount">Orig Amount</string>
+    <string name="tor_info_response_masked_pan">Masked PAN</string>
+    <string name="tor_info_response_batch_no">Batch No</string>
+    <string name="tor_info_response_reversal_auth_code">Reversal Auth Code</string>
+    <string name="tor_info_response_orig_trans_type">Orig Trans Type</string>
+    <string name="tor_info_response_orig_trans_date_time">Orig Trans Date Time</string>
+    <string name="tor_info_response_orig_trans_auth_code">Orig Trans Auth Code</string>
+
+    <string name="response_addlrspdata_aci">ACI</string>
+    <string name="response_addlrspdata_trans_id">TransID</string>
+    <string name="response_addlrspdata_card_level_result">CardLevelResult</string>
+    <string name="response_addlrspdata_source_reason_code">SourceReasonCode</string>
+    <string name="response_addlrspdata_bank_net_data">BankNetData</string>
+    <string name="response_addlrspdata_pos_entry_mode_chg">POSEntryModeChg</string>
+    <string name="response_addlrspdata_tran_edit_errcode">TranEditErrCode</string>
+    <string name="response_addlrspdata_disc_proc_code">DiscProcCode</string>
+    <string name="response_addlrspdata_disc_pos_entry">DiscPOSEntry</string>
+    <string name="response_addlrspdata_disc_resp_code">DiscRespCode</string>
+    <string name="response_addlrspdata_pos_data">POSData</string>
+    <string name="response_addlrspdata_disc_trans_qualifier">DiscTransQualifier</string>
+    <string name="response_addlrspdata_disc_nrid">DiscNRID</string>
+    <string name="response_addlrspdata_trnmsn_date_time">trnmsnDateTime</string>
+    <string name="response_addlrspdata_orig_stan">origSTAN</string>
+    <string name="response_addlrspdata_cvv_error_code">cvvErrorCode</string>
+    <string name="response_addlrspdata_xcode_resp">xCodeResp</string>
+    <string name="response_addlrspdata_ath_ntwk_id">AthNtwkID</string>
+    <string name="response_addlrspdata_term_entry_capablt">TermEntryCapablt</string>
+    <string name="response_addlrspdata_pos_entry_mode">POSEntryMode</string>
+    <string name="response_addlrspdata_serv_code">ServCode</string>
+    <string name="response_addlrspdata_spend_qind">SpendQInd</string>
+    <string name="response_addlrspdata_wlt_id">WltID</string>
+    <string name="response_addlrspdata_local_date_time">localDateTime</string>
+    <string name="response_addlrspdata_emv_tags">EMV Tags</string>
+
 </resources>
